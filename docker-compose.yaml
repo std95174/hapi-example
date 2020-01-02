@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nginx:
+    image: nginx
+    ports:
+      - 8888:80
+  api:
+    build: ./
+    environment:
+      - PORT=80
+      - HOST=0.0.0.0
+    ports:
+      - 8080:80
